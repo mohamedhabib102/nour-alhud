@@ -8,7 +8,6 @@ export const metadata: Metadata = {
         title: "القرآن الكريم | نور الهدى",
         description: "اقرأ واستمع إلى القرآن الكريم كاملاً. تصفح السور والآيات بسهولة ويسر.",
         url: "https://muddy-sun-471.linkyhost.com/quran",
-        images: ["/logo.svg"],
     },
 };
 

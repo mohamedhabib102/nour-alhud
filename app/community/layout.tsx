@@ -8,7 +8,6 @@ export const metadata: Metadata = {
     title: "مجتمع نور الهدى | تواصل وشارك",
     description: "انضم إلى مجتمع نور الهدى، شارك الخواطر، الأدعية، وتفاعل مع محتوى ديني هادف.",
     url: "https://muddy-sun-471.linkyhost.com/community",
-    images: ["/logo.svg"],
   },
 };
 

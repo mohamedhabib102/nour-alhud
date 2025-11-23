@@ -25,14 +25,6 @@ export const metadata: Metadata = {
     description: "اكتشف السكينة مع منصة نور الهدى. قرآن، أذكار، ومجتمع إسلامي يجمعنا على الطاعة.",
     url: "https://muddy-sun-471.linkyhost.com",
     siteName: "نور الهدى",
-    images: [
-      {
-        url: "https://muddy-sun-471.linkyhost.com",
-        width: 1200,
-        height: 630,
-        alt: "شعار نور الهدى",
-      },
-    ],
     locale: "ar_AR",
     type: "website",
   },
