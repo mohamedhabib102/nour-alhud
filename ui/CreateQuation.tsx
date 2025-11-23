@@ -24,6 +24,7 @@ const CreateQuestion: React.FC = () => {
     });
     const [showQuestions, setShowQuestions] = useState<CreateQuestionProps[]>([]);
     const [message, setMessage] = useState<string>("");
+    const [loading, setLoading] = useState<boolean>(false);
 
     const handelChange = (e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
@@ -33,6 +34,7 @@ const CreateQuestion: React.FC = () => {
     }
 
     const sendQuestion = async (e: FormEvent) => {
+        setLoading(true)
         e.preventDefault();
         if (!question.name || !question.question || !question.gender) {
             setMessage(" من فضلك تأكد من إدخال جميع البيانات المطلوبة بشكل صحيح ");
@@ -60,6 +62,8 @@ const CreateQuestion: React.FC = () => {
             })
         } catch (error) {
             console.log(error);
+        } finally {
+            setLoading(false)
         }
     }
 
@@ -130,7 +134,7 @@ const CreateQuestion: React.FC = () => {
                     className="block ml-auto mt-4 p-2 bg-(--main-color) text-white rounded-lg
                     cursor-pointer  hover:text-white hover:bg-[#264f37] transition-all duration-300
                     w-33 text-right text-[20px]"
-                > أضف </button>
+                > {loading ? " جاري الأضافة... " : "أضف"} </button>
             </form>
         </div>
     )
