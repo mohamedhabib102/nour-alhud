@@ -5,6 +5,7 @@ import CreateQuation from "@/ui/CreateQuation";
 import CustomContainer from "@/ui/CustomContainer";
 import CustomTitle from "@/ui/CustomTitle";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { IoMdFemale, IoMdMale } from "react-icons/io";
 
@@ -43,6 +44,9 @@ const Quations: React.FC = () => {
           description="شارك بسؤالك الديني واكتشف إجابات الأسئلة الشائعة"
           success={false}
         />
+        <Link href="/questions" className="block mt-4 p-2 bg-(--main-color) text-white rounded-lg
+        cursor-pointer hover:text-white hover:bg-[#264f37] transition-all duration-300
+         text-[20px] mb-5 mr-auto w-fit"> عرض جميع الأسئلة  </Link>
         <div className="mb-4">
           {showQuestions.slice(0, 8).map((ques) => (
             ques.success && (

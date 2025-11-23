@@ -16,11 +16,11 @@ const Header: React.FC = () => {
         <OverlayHelp 
         toggle={toggle} 
         setToggle={setToggle} />
-        <section className="bg-linear-to-r from-[#121212] to-[#ceaf15] py-2">
+        <section className="bg-linear-to-r from-[#121212] to-[#ceaf15] py-2" dir="ltr">
             <CustomContainer>
                 <nav className="flex items-center justify-between">
                     <Logo />
-                    <div className="flex items-center gap-4">
+                    <div className="flex items-center gap-4 flex-row-reverse">
                     <ToggleNavbar setToggle={setToggle} toggle={toggle} />
                     <DarkModeToggle />
                     </div>

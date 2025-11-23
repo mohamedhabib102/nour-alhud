@@ -60,7 +60,7 @@ const OverlayHelp: React.FC<OverlayMessage> = ({ toggle, setToggle }) => {
                     {NavbarText.map((nav) => (
                         <li key={nav.id} className="">
                             <Link href={nav.link}
-                                className="flex items-center gap-2 justify-start flex-row-reverse
+                                className="flex items-center gap-2 justify-start flex-row
                     p-2 bg-[#0e582dd6] rounded-lg hover:bg-[#0e582d] text-white cursor-pointer"
                                 onClick={() => setToggle(!toggle)}
                             >
@@ -69,7 +69,7 @@ const OverlayHelp: React.FC<OverlayMessage> = ({ toggle, setToggle }) => {
                             </Link>
                         </li>
                     ))}
-                    <p className="flex items-center flex-row-reverse justify-center mt-2 text-center gap-1 font-semibold text-gray-800 dark:text-gray-200">
+                    <p className="flex items-center flex-row justify-center mt-2 text-center gap-1 font-semibold text-gray-800 dark:text-gray-200">
                         "
                         <span>  وجودك يعني لنا الكثير </span>
                         <FaHeart size={20} className="text-red-500" />

@@ -4,7 +4,7 @@ import Image from "next/image"
 
 const Logo: React.FC = () => {
     return (
-        <h1 className="flex items-center gap-1.5">
+        <h1 className="flex items-center gap-1.5" dir="ltr">
        <Image
         src="/logo.svg"
         alt="image logo"
