@@ -33,7 +33,7 @@ const AllQuestions: React.FC = () => {
                     <AccordionItem key={ques.id}
                         title={ques.question}>
                         <div className="flex items-center flex-col">
-                            <div className="flex items-center gap-3 flex-row-reverse border-b border-gray-300 dark:border-gray-700 w-full pb-1.5">
+                            <div className="flex items-center gap-3 flex-row border-b border-gray-300 dark:border-gray-700 w-full pb-1.5">
                                 {
                                     ques.gender === "أنثى" ? (
                                         <Image
@@ -56,7 +56,7 @@ const AllQuestions: React.FC = () => {
                                     )
                                 }
                                 <div>
-                                    <h4 className="text-(--main-color) dark:text-[#4ade80] font-semibold flex flex-row-reverse gap-0.5">
+                                    <h4 className="text-(--main-color) dark:text-[#4ade80] font-semibold flex flex-row gap-0.5">
                                         <span>{ques.userName}</span>
                                         <span className="text-sm font-medium">{ques.gender === "ذكر" ? (
                                             <IoMdMale size={23} />
