@@ -15,6 +15,7 @@ const rakkas = Rakkas({
   weight: "400",
 });
 export const metadata: Metadata = {
+  metadataBase: new URL("https://muddy-sun-471.linkyhost.com"),
   title: "نور الهدى | رفيقك في رحلة الإيمان",
   description: "منصة نور الهدى هي وجهتك الروحانية المتكاملة، حيث تجمع بين تلاوة القرآن الكريم، الأذكار اليومية، ومجتمع إسلامي متفاعل. نسعى لتعزيز صلتك بالله وتوفير بيئة هادئة تعينك على الطاعة والتفقه في الدين",
   keywords: ["قرآن كريم", "أذكار", "إسلام", "نور الهدى", "تفسير", "أدعية", "مجتمع إسلامي", "أسئلة دينية"],
@@ -22,6 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "نور الهدى | رفيقك في رحلة الإيمان",
     description: "اكتشف السكينة مع منصة نور الهدى. قرآن، أذكار، ومجتمع إسلامي يجمعنا على الطاعة.",
+    url: "https://muddy-sun-471.linkyhost.com",
     siteName: "نور الهدى",
     images: [
       {
