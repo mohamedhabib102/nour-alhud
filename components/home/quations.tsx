@@ -1,0 +1,96 @@
+"use client"
+import { supabase } from "@/lib/supabaseClient";
+import AccordionItem from "@/ui/Accordion";
+import CreateQuation from "@/ui/CreateQuation";
+import CustomContainer from "@/ui/CustomContainer";
+import CustomTitle from "@/ui/CustomTitle";
+import Image from "next/image";
+import { useEffect, useState } from "react";
+import { IoMdFemale, IoMdMale } from "react-icons/io";
+
+
+
+
+
+
+interface CreateQuestionProps {
+  id: number;
+  userName: string;
+  question: string;
+  gender: string;
+  result: string;
+  success: boolean;
+}
+
+const Quations: React.FC = () => {
+  const [showQuestions, setShowQuestions] = useState<CreateQuestionProps[]>([])
+
+
+  const getQuestions = async () => {
+    const { data, error } = await supabase.from("question").select("*");
+    if (!error) setShowQuestions(data)
+  }
+
+
+  useEffect(() => {
+    getQuestions()
+  }, [])
+  return (
+    <section className="py-16 bg-gray-100 dark:bg-gray-900">
+      <CustomContainer>
+        <CustomTitle
+          title="الأسئلة الشائعة"
+          description="شارك بسؤالك الديني واكتشف إجابات الأسئلة الشائعة"
+          success={false}
+        />
+        <div className="mb-4">
+          {showQuestions.slice(0, 8).map((ques) => (
+            ques.success && (
+              <AccordionItem key={ques.id}
+                title={ques.question}>
+                <div className="flex items-center flex-col">
+                  <div className="flex items-center gap-3 flex-row-reverse border-b border-gray-300 dark:border-gray-700 w-full pb-1.5">
+                    {
+                      ques.gender === "أنثى" ? (
+                        <Image
+                          src="/images/female.jpg"
+                          title={ques.question}
+                          alt="avatar"
+                          width={40}
+                          height={100}
+                          className="rounded-full"
+                        />
+                      ) : (
+                        <Image
+                          src="/images/male.png"
+                          title={ques.question}
+                          alt="avatar"
+                          width={40}
+                          height={100}
+                          className="rounded-full"
+                        />
+                      )
+                    }
+                    <div>
+                      <h4 className="text-(--main-color) dark:text-[#4ade80] font-semibold flex flex-row-reverse gap-0.5">
+                        <span>{ques.userName}</span>
+                        <span className="text-sm font-medium">{ques.gender === "ذكر" ? (
+                          <IoMdMale size={23} />
+                        ) : (
+                          <IoMdFemale size={23} />
+                        )}</span>
+                      </h4>
+                    </div>
+                  </div>
+                  <p className="p-3 leading-7 text-right ml-auto text-gray-800 dark:text-gray-200">{ques.result}</p>
+                </div>
+              </AccordionItem>
+            )
+          ))}
+        </div>
+        <CreateQuation />
+      </CustomContainer>
+    </section>
+  )
+}
+export default Quations;

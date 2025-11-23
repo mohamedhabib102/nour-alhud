@@ -1,0 +1,68 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --main-color: #0e582d;
+  --main-bg: #ab900b;
+  --font-main: var(--font-rubik);
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-main);
+  --font-quran: var(--font-rakkas);
+}
+
+@layer utilities {
+  .font-quran {
+    font-family: var(--font-quran);
+  }
+}
+
+
+body {
+  font-family: var(--font-main)!important;
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+
+.swiper-pagination-bullet {
+  background-color: var(--main-bg) !important;          
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #0b1d26 !important;
+}
+.swiper-button-next,
+.swiper-button-prev {
+  color: #ceaf15 !important;      
+  font-size: 2rem !important;      
+  width: 3rem !important;          
+  height: 3rem !important;         
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 2rem !important;      
+}
+
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

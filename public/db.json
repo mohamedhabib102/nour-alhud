@@ -1,0 +1,21 @@
+{
+  "heroSlides": [
+    {
+      "id": "1",
+      "type": "video",
+      "title": "لا بأس ببداية جديدة - فضفضة الأحد - محمد الغليظ",
+      "link": "https://www.youtube.com/watch?v=PG6PP-sD2Qk",
+      "image": "/images/lesson1.avif"
+    },
+    {
+      "id": "2",
+      "type": "video",
+      "title": "ايه المشكلة في غض البصر ؟",
+      "link": "https://www.youtube.com/watch?v=kZvYIje_y2w",
+      "image": "/images/lesson2.avif"
+    }
+  ],
+  "users": [
+    { "id": 1, "name": "Ali", "password": "123456" }
+  ]
+}
