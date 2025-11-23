@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     siteName: "نور الهدى",
     images: [
       {
-        url: "/logo.svg",
+        url: "https://muddy-sun-471.linkyhost.com",
         width: 1200,
         height: 630,
         alt: "شعار نور الهدى",
