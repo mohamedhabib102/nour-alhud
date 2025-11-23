@@ -113,7 +113,7 @@ const CreatePost: React.FC<CreatePostProps> = ({ toggle, setToggle, getAllPosts 
                 <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-6 text-center mt-6">إضافة مشاركة جديدة</h2>
 
                 {error && (
-                    <div className="bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 p-3 rounded-lg mb-4 text-sm text-center border border-red-100 dark:border-red-800">
+                    <div className="bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 p-3 rounded-lg mb-4 text-sm text-right border border-red-100 dark:border-red-800">
                         {error}
                     </div>
                 )}
@@ -222,7 +222,7 @@ const CreatePost: React.FC<CreatePostProps> = ({ toggle, setToggle, getAllPosts 
                         type="submit"
                         disabled={loading}
                         className={`w-full py-3 px-4 rounded-lg text-white font-semibold shadow-md transition-all
-            ${loading
+                       ${loading
                                 ? 'bg-[#0e582d]/70 cursor-not-allowed'
                                 : 'bg-[#0e582d] hover:bg-[#0b4623] hover:shadow-lg active:transform active:scale-[0.99]'
                             }`}

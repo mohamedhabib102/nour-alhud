@@ -69,6 +69,11 @@ const CreateQuestion: React.FC = () => {
                 title=" شارك بسؤالك "
                 success={false}
             />
+            {message && (
+                <div className="bg-red-50 text-right dark:bg-red-900/20 text-red-600 dark:text-red-400 p-3 rounded-lg mb-4 text-sm border border-red-100 dark:border-red-800">
+                    {message}
+                </div>
+            )}
             <form
                 onSubmit={sendQuestion}
                 method="post">
@@ -120,9 +125,6 @@ const CreateQuestion: React.FC = () => {
                     <option value="ذكر">ذكر</option>
                     <option value="أنثى">أنثى</option>
                 </select>
-                {message && (
-                    <p className="text-right text-red-500 font-medium mt-2.5">{message}</p>
-                )}
                 <button
                     type="submit"
                     className="block ml-auto mt-4 p-2 bg-(--main-color) text-white rounded-lg
