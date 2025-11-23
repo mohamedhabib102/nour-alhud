@@ -1,13 +1,13 @@
-import CustomTitle from "@/ui/CustomTitle"
-import axios from "axios"
 import Link from "next/link"
 
 
 
-const getSurahs = async () => {
-  const res = await axios.get("https://api.alquran.cloud/v1/surah")
-  const data = await res.data
-  return data.data
+const getSurahs = async() => {
+  const res = await fetch("https://api.alquran.cloud/v1/surah", {
+    cache: "force-cache"
+  })
+  const data = await res.json()
+  return data.data  
 }
 
 interface Surah {
@@ -23,9 +23,6 @@ interface Surah {
 
 const GetAllSurahs: React.FC = async () => {
   const surahs = await getSurahs();
-
-
-  console.log(surahs);
 
   return (
     <div dir="rtl">

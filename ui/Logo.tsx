@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image"
 
 
@@ -5,7 +6,7 @@ const Logo: React.FC = () => {
     return (
         <h1 className="flex items-center gap-1.5">
        <Image
-        src="logo.svg"
+        src="/logo.svg"
         alt="image logo"
         title=" نور الهدى "
         width={50}

@@ -1,6 +1,6 @@
 import CustomContainer from "@/ui/CustomContainer";
 import CustomTitle from "@/ui/CustomTitle";
-import axios from "axios";
+
 
 interface Props {
   params: {
@@ -14,14 +14,15 @@ const SurhaPage: React.FC<Props> = async ({ params }) => {
 
 
   const getSurah = async () => {
-    const res = await axios.get(`https://api.alquran.cloud/v1/surah/${surahNumber}/ar.asad`)
-    const data = await res.data
+    const res = await fetch(`https://api.alquran.cloud/v1/surah/${surahNumber}/ar.asad`, {
+      cache: "force-cache"
+    })
+    const data = await res.json()
     return data.data
   }
 
   const surah = await getSurah();
 
-  console.log(surah);
 
   return (
     <section className="py-16">
