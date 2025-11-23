@@ -19,6 +19,7 @@ const AllQuestions: React.FC = () => {
 
     const getQuestions = async () => {
         const { data, error } = await supabase.from("question").select("*");
+        console.log(data)
         if (!error) setShowQuestions(data)
     }
 

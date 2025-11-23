@@ -49,7 +49,7 @@ const SurhaPage: React.FC<Props> = async ({ params }) => {
           />
           <div className="mt-10">
             {surah.ayahs.map((ayah: any) => (
-              <p className="cursor-pointer flex items-center gap-1.5 justify-start flex-row-reverse font-quran text-2xl text-right leading-12 mb-6 border-b-2 border-gray-100 dark:border-gray-800 pb-4 last:border-0 hover:text-[#0e582d] dark:hover:text-[#4ade80] transition-colors duration-200" key={ayah.number}>
+              <p className="cursor-pointer flex items-center gap-1.5 justify-start flex-row font-quran text-2xl text-right leading-12 mb-6 border-b-2 border-gray-100 dark:border-gray-800 pb-4 last:border-0 hover:text-[#0e582d] dark:hover:text-[#4ade80] transition-colors duration-200" key={ayah.number}>
                 <span>{ayah.text}</span>
                 <span className="inline-flex items-center justify-center w-10 h-10 relative mx-2 align-middle select-none">
                   <svg viewBox="0 0 40 40" className="absolute inset-0 w-full h-full" fill="none" stroke="currentColor">
