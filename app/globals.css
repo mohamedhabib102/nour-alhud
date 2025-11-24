@@ -66,3 +66,7 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+.custom_transition {
+  transition: 0.3s;
+}

@@ -5,6 +5,10 @@ import { BiSolidComment } from "react-icons/bi";
 import AddPostForm from "@/ui/CreatePost";
 import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabaseClient";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
 
 
 
@@ -124,7 +128,7 @@ const Posts: React.FC = () => {
                 <button className="bg-(--main-bg) text-white p-2 rounded-lg w-[200px] block ml-auto mb-4 cursor-pointer hover:opacity-80 transition duration-300"
                     onClick={() => setToggle(!toggle)}
                 > اضافة منشور </button>
-                <div className="flex items-start justify-between lg:flex-row-reverse md:flex-row-reverse flex-col gap-8">
+                <div className="flex items-start justify-between lg:flex-row-reverse md:flex-row flex-col-reverse gap-8">
                     <div className="lg:w-[75%] md:w-[60%] w-full">
                         <div className="">
                             {postsPage.map((post) => (
@@ -169,7 +173,7 @@ const Posts: React.FC = () => {
                                                         alt={post.name}
                                                         width={500}
                                                         height={500}
-                                                        className="rounded-lg w-full h-[480px] mt-3 bg-cover"
+                                                        className="rounded-lg w-full lg:h-[550px] mt-3 bg-cover"
                                                     />
                                                 )}
                                             </div>
@@ -193,22 +197,54 @@ const Posts: React.FC = () => {
                             ))}
                         </div>
                     </div>
-                    <div className="bg-gray-200 dark:bg-gray-900 p-4 lg:w-[20%] md:w-[35%] w-full lg:sticky md:sticky top-0 rounded-lg">
-                        {randomDhikr.map((dhikr) => (
-                            <div key={dhikr.id} className="bg-white dark:bg-gray-800 p-4 rounded-lg mb-5" dir="rtl">
-                                <div className="flex items-center justify-end flex-row-reverse gap-0.5">
-                                    <h2 className="text-lg font-medium text-(--main-color)">{dhikr.title}</h2>
-                                    <Image
-                                        src={dhikr.image}
-                                        alt={dhikr.title}
-                                        width={40}
-                                        height={40}
-                                        className="rounded-full"
-                                    />
+                    <div className="bg-gray-200 dark:bg-gray-900 p-3 lg:w-[20%] md:w-[35%] w-full sticky top-0 rounded-lg">
+                        {/* Desktop View */}
+                        <div className="hidden md:block">
+                            {randomDhikr.map((dhikr) => (
+                                <div key={dhikr.id} className="bg-white dark:bg-gray-800 p-4 rounded-lg mb-5" dir="rtl">
+                                    <div className="flex items-center justify-end flex-row-reverse gap-0.5">
+                                        <h2 className="text-lg font-medium text-(--main-color)">{dhikr.title}</h2>
+                                        <Image
+                                            src={dhikr.image}
+                                            alt={dhikr.title}
+                                            width={40}
+                                            height={40}
+                                            className="rounded-full"
+                                        />
+                                    </div>
+                                    <p className="mt-2 text-sm text-gray-500 dark:text-gray-300">{dhikr.content}</p>
                                 </div>
-                                <p className="mt-2 text-sm text-gray-500 dark:text-gray-300">{dhikr.content}</p>
-                            </div>
-                        ))}
+                            ))}
+                        </div>
+
+                        {/* Mobile View (Swiper) */}
+                        <div className="block md:hidden">
+                            <Swiper
+                                modules={[Autoplay]}
+                                spaceBetween={20}
+                                slidesPerView={1}
+                                autoplay={{ delay: 3000 }}
+                                className="w-full"
+                            >
+                                {randomDhikr.map((dhikr) => (
+                                    <SwiperSlide key={dhikr.id}>
+                                        <div className="bg-white dark:bg-gray-800 p-4 rounded-lg" dir="rtl">
+                                            <div className="flex items-center justify-end flex-row-reverse gap-0.5">
+                                                <h2 className="text-lg font-medium text-(--main-color)">{dhikr.title}</h2>
+                                                <Image
+                                                    src={dhikr.image}
+                                                    alt={dhikr.title}
+                                                    width={40}
+                                                    height={40}
+                                                    className="rounded-full"
+                                                />
+                                            </div>
+                                            <p className="mt-2 text-sm text-gray-500 dark:text-gray-300">{dhikr.content}</p>
+                                        </div>
+                                    </SwiperSlide>
+                                ))}
+                            </Swiper>
+                        </div>
                     </div>
                 </div>
             </div>

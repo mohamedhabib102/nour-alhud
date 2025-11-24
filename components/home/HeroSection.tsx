@@ -38,6 +38,17 @@ const HeroSection: React.FC = () => {
         getHeroSectionContent();
     }, []);
 
+    useEffect(() => {
+        if (playingId) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "";
+        }
+        return () => {
+            document.body.style.overflow = "";
+        };
+    }, [playingId]);
+
     function getEmbedLink(url: string) {
         const match = url.match(/v=([a-zA-Z0-9_-]+)/);
         if (match && match[1]) {
@@ -52,7 +63,7 @@ const HeroSection: React.FC = () => {
     }
 
     return (
-        <section className='lg:p-6 md:p-2 p-3 bg-gray-100 dark:bg-gray-900'>
+        <section className='lg:p-6 md:p-2 p-0 bg-gray-100 dark:bg-gray-900'>
             <Swiper
                 modules={[Pagination, Navigation, Autoplay]}
                 slidesPerView={1}
@@ -60,7 +71,7 @@ const HeroSection: React.FC = () => {
                 navigation
                 loop
                 autoplay={playingId ? false : { delay: 5000 }}
-                className="w-full rounded-2xl"
+                className="w-full lg:rounded-2xl"
             >
                 {Array.isArray(hero) && hero.map((slide) => {
                     const isPlaying = playingId === slide.id;
@@ -70,14 +81,21 @@ const HeroSection: React.FC = () => {
                             <div className='w-screen lg:h-[670px] md:h-[450px] h-[300px] relative overflow-hidden'>
                                 {slide.type === "video" && videoId ? (
                                     isPlaying ? (
-                                        <iframe
-                                            className="w-full h-full"
-                                            src={`${getEmbedLink(slide.link)}?autoplay=1`}
-                                            title={slide.title}
-                                            frameBorder="0"
-                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                            allowFullScreen
-                                        ></iframe>
+                                        <div
+                                            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm"
+                                            onClick={() => setPlayingId(null)}
+                                        >
+                                            <div className="relative w-full max-w-5xl aspect-video p-4">
+                                                <iframe
+                                                    className="w-full h-full rounded-lg shadow-2xl"
+                                                    src={`${getEmbedLink(slide.link)}?autoplay=1`}
+                                                    title={slide.title}
+                                                    frameBorder="0"
+                                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                    allowFullScreen
+                                                ></iframe>
+                                            </div>
+                                        </div>
                                     ) : (
                                         <div
                                             className="w-full h-full relative cursor-pointer"
