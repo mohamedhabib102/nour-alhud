@@ -13,6 +13,13 @@
       "title": "ايه المشكلة في غض البصر ؟",
       "link": "https://www.youtube.com/watch?v=kZvYIje_y2w",
       "image": "/images/lesson2.avif"
+    },
+    {
+      "id": "3",
+      "type": "image",
+      "title": " القضية السودانية ",  
+      "description": " اللهم أعد على السودان أمنه وسلامه، واحفظ أهله وانصرهم على ما يواجهون ",
+      "image": "/images/soudan.jpg"
     }
   ],
   "users": [
