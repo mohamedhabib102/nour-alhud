@@ -13,13 +13,13 @@ import Azkar from "@/components/adhkar/Azkar";
 const list: AdhkarItem[]= [
     {
         id: 1,
-        title: "أذكار المساء",
-        icon: IoMdSunny  
+        title: "أذكار الصباح",
+        icon: FaMoon
     },
     {
         id: 2,
-        title: "أذكار الصباح",
-        icon: FaMoon
+        title: "أذكار المساء",
+        icon: IoMdSunny  
     },
     {
        id: 3,
