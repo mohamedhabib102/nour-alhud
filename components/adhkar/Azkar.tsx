@@ -41,7 +41,7 @@ const Azkar: React.FC<AzkarProps> = ({list}) => {
             await navigator.share({
                 title: "أذكار المسلم",
                 text: zekrText + "\n\n📌 من موقع أذكار المسلم",
-                url: "/logo.svg"
+                url: "https://nour-alhud.vercel.app/"
             });
         } catch (error) {
             console.log("تم إلغاء المشاركة", error);

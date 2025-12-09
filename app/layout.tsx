@@ -16,7 +16,7 @@ const rakkas = Rakkas({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://muddy-sun-471.linkyhost.com"),
+  metadataBase: new URL("https://nour-alhud.vercel.app/"),
   title: "نور الهدى | رفيقك في رحلة الإيمان",
   description:
     "منصة نور الهدى هي وجهتك الروحانية المتكاملة، حيث تجمع بين تلاوة القرآن الكريم، الأذكار اليومية، ومجتمع إسلامي متفاعل. نسعى لتعزيز صلتك بالله وتوفير بيئة هادئة تعينك على الطاعة والتفقه في الدين",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     title: "نور الهدى | رفيقك في رحلة الإيمان",
     description:
       "اكتشف السكينة مع منصة نور الهدى. قرآن، أذكار، ومجتمع إسلامي يجمعنا على الطاعة.",
-    url: "https://muddy-sun-471.linkyhost.com",
+    url: "https://nour-alhud.vercel.app/",
     siteName: "نور الهدى",
     locale: "ar_AR",
     type: "website",
