@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     title: "نور الهدى | رفيقك في رحلة الإيمان",
     description:
       "اكتشف السكينة مع منصة نور الهدى. قرآن، أذكار، ومجتمع إسلامي يجمعنا على الطاعة.",
-    url: "https://nour-alhud.vercel.app/",
+    url: "https://muddy-sun-471.linkyhost.com",
     siteName: "نور الهدى",
     locale: "ar_AR",
     type: "website",
