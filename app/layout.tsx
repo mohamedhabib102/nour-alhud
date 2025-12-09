@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/logo.svg",
+        url: "/logo-share.png",
         width: 600,
         height: 600,
         alt: "شعار نور الهدى",
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     title: "نور الهدى | رفيقك في رحلة الإيمان",
     description:
       "اكتشف السكينة مع منصة نور الهدى. قرآن، أذكار، ومجتمع إسلامي يجمعنا على الطاعة.",
-    images: ["/logo.svg"],
+    images: ["/logo-share.png"],
   },
 
   icons: {
