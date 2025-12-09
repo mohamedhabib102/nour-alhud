@@ -1,7 +1,6 @@
 import CustomContainer from "@/ui/CustomContainer"
 import { IconType } from "react-icons";
-import { MdNightsStay } from "react-icons/md";
-import { GoSun } from "react-icons/go";
+import { FaBookOpenReader } from "react-icons/fa6";
 import { FaQuran } from "react-icons/fa";
 import { GiPrayerBeads } from "react-icons/gi";
 import { FaMosque } from "react-icons/fa6";
@@ -23,15 +22,9 @@ interface Serve {
 const services: Serve[] = [
     {
         id: 1,
-        title: " أذكار الصباح ",
-        icon: GoSun,
-        link: "/pray"
-    },
-    {
-        id: 2,
-        title: " أذكار المساء ",
-        icon: MdNightsStay,
-        link: "/pray"
+        title: " الأذكار ",
+        icon: FaBookOpenReader,
+        link: "/adhkar"
     },
     {
         id: 3,

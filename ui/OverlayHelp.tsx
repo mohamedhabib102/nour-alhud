@@ -50,7 +50,7 @@ const NavbarText: Navbar[] = [
 const OverlayHelp: React.FC<OverlayMessage> = ({ toggle, setToggle }) => {
     return (
         <>
-            <div className={`${toggle ? "opacity-100 visible" : "opacity-0 invisible"} fixed top-0 left-0 inset-0 z-10 bg-black/50`}></div>
+            <div className={`${toggle ? "opacity-100 visible" : "opacity-0 invisible"} fixed top-0 left-0 inset-0 z-10 bg-black/40 backdrop-blur-sm`}></div>
             <div className={`${toggle ? "opacity-100 visible scale-100" : "opacity-0 invisible scale-0"}
         transition-all duration-300 fixed top-1/2 left-1/2 -translate-1/2 z-20 lg:w-96 w-10/12 m-auto bg-gray-100 dark:bg-gray-800 py-6 px-4 rounded-lg`}>
                 <button onClick={() => setToggle(false)} className="cursor-pointer transition duration-200 hover:text-(--main-color) dark:text-gray-200 absolute top-2 right-2">
