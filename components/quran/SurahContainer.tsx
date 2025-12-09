@@ -55,11 +55,7 @@ const SurahContainer: React.FC<SurahContainerProps> = ({ surah }) => {
                         <div className="mt-10">
                             <SurahDisplay
                                 surah={surah}
-                                onAyahClick={handleShowSaved}
-                                handleAyahClick={handleAyahClick}
-                                marks={marks}
                             />
-
                         </div>
                     </div>
                 </CustomContainer>

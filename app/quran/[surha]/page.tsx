@@ -10,7 +10,7 @@ interface Props {
 }
 
 const getSurah = async (surahNumber: string) => {
-  const res = await fetch(`https://api.alquran.cloud/v1/surah/${surahNumber}/ar.asad`, {
+  const res = await fetch(`https://api.alquran.cloud/v1/surah/${surahNumber}/ar.alafasy`, {
     cache: "force-cache"
   })
   const data = await res.json()
@@ -32,10 +32,22 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 
+// const getAyahsVoice = async (surahNumber: string) => {
+//   const res = await fetch(`https://api.alquran.cloud/v1/surah/${surahNumber}/ar.alafasy`, {
+//     cache: "force-cache"
+//   })
+//   const data = await res.json()
+//   return data
+// }
+
+
 const SurhaPage: React.FC<Props> = async ({ params }) => {
   const resolvedParams = await params;
   const surahNumber = resolvedParams.surha;
   const surah = await getSurah(surahNumber);
+  // const ayahsVoice = await getAyahsVoice(surahNumber);
+
+  console.log(surah);
 
   return (
     <SurahContainer surah={surah} />
