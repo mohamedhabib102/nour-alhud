@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/logo-share.png",
+        url: "https://nour-alhud.vercel.app/logo-share.png",
         width: 600,
         height: 600,
         alt: "شعار نور الهدى",
@@ -55,12 +55,12 @@ export const metadata: Metadata = {
     title: "نور الهدى | رفيقك في رحلة الإيمان",
     description:
       "اكتشف السكينة مع منصة نور الهدى. قرآن، أذكار، ومجتمع إسلامي يجمعنا على الطاعة.",
-    images: ["/logo-share.png"],
+    images: ["https://nour-alhud.vercel.app/logo-share.png"],
   },
 
   icons: {
-    icon: "/logo-share.png",
-    apple: "/logo-share.png",
+    icon: "https://nour-alhud.vercel.app/logo-share.png",
+    apple: "https://nour-alhud.vercel.app/logo-share.png",
   },
 };
 
