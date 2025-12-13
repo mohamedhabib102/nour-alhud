@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Rubik, Rakkas } from "next/font/google";
 import "./globals.css";
 import Header from "@/layout/Header";
+import Footer from "@/layout/Footer";
+import  { ContextProviderWrapper } from "@/lib/contextapi";
 
 const rubik = Rubik({
   variable: "--font-rubik",
@@ -72,8 +74,13 @@ export default function RootLayout({
   return (
     <html lang="ar" dir="rtl" className={`${rubik.variable} ${rakkas.variable}`}>
       <body className={`antialiased`}>
+        <ContextProviderWrapper>
         <Header />
-        {children}
+        <main>
+          {children}
+        </main>
+        <Footer />
+        </ContextProviderWrapper>
       </body>
     </html>
   );

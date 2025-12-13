@@ -10,7 +10,7 @@ export default function Home() {
     <main>
       <HeroSection />
       <Services />
-      <Quations />
+      <Quations state="home" />
     </main>
   );
 }

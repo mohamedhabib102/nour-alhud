@@ -124,7 +124,7 @@ const HeroSection: React.FC = () => {
                                             alt={slide.title}
                                             fill
                                         />
-                                        <div className='absolute top-[40%] right-16 text-white z-50'>
+                                        <div className='absolute lg:top-[40%] top-16 lg:right-16 right-12 text-white z-50'>
                                             <h3 className="text-lg font-bold text-(--main-color)">{slide.title}</h3>
                                             <p className="text-3xl leading-11 lg:w-[450px] md:w-96 ">{slide.description}</p>
                                         </div>

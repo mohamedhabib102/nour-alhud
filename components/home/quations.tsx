@@ -23,7 +23,12 @@ interface CreateQuestionProps {
   success: boolean;
 }
 
-const Quations: React.FC = () => {
+
+interface QuationsProps {
+  state: string;
+}
+
+const Quations: React.FC<QuationsProps> = ({ state }) => {
   const [showQuestions, setShowQuestions] = useState<CreateQuestionProps[]>([])
 
 
@@ -37,16 +42,22 @@ const Quations: React.FC = () => {
     getQuestions()
   }, [])
   return (
-    <section className="py-16 bg-gray-100 dark:bg-gray-900">
+    <section className={
+      `${state === "page" ? "" : "py-16 bg-gray-100 dark:bg-gray-900"}`
+    }>
       <CustomContainer>
-        <CustomTitle
-          title="الأسئلة الشائعة"
-          description="شارك بسؤالك الديني واكتشف إجابات الأسئلة الشائعة"
-          success={false}
-        />
-        <Link href="/questions" className="block mt-4 p-2 bg-(--main-color) text-white rounded-lg
-        cursor-pointer hover:text-white hover:bg-[#264f37] transition-all duration-300
-         text-[20px] mb-5 mr-auto w-fit"> عرض جميع الأسئلة  </Link>
+        {state !== "page" && (
+          <CustomTitle
+            title="الأسئلة الشائعة"
+            description="شارك بسؤالك الديني واكتشف إجابات الأسئلة الشائعة"
+            success={false}
+          />
+        )}
+        {state !== "page" && (
+          <Link href="/questions" className="block mt-4 p-2 bg-(--main-color) text-white rounded-lg
+          cursor-pointer hover:text-white hover:bg-[#264f37] transition-all duration-300
+           text-[20px] mb-5 mr-auto w-fit"> عرض جميع الأسئلة  </Link>
+        )}
         <div className="mb-4">
           {showQuestions.slice(0, 8).map((ques) => (
             ques.success && (

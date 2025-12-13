@@ -1,6 +1,6 @@
 import CustomContainer from "@/ui/CustomContainer"
 import CustomTitle from "@/ui/CustomTitle"
-import AllQuestions from "@/components/questions/AllQuestions"
+import { Quations } from "@/components/home"
 
 
 
@@ -13,7 +13,7 @@ const QuestionsPage: React.FC = () => {
                     success={true}
                     description="إذا لم تجد إجابة على سؤالك في هذه الصفحة، يمكنك الاتصال بنا مباشرة"
                 />
-                <AllQuestions />
+                <Quations state="page"/>
             </CustomContainer>
         </section>
     )

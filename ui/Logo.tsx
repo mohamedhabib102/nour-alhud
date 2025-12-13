@@ -1,9 +1,11 @@
 "use client"
 import Image from "next/image"
+import Link from "next/link";
 
 
 const Logo: React.FC = () => {
     return (
+      <Link href="/">
         <h1 className="flex items-center gap-1.5" dir="ltr">
        <Image
         src="/logo.svg"
@@ -17,6 +19,7 @@ const Logo: React.FC = () => {
         <span className="text-(--main-color) font-semibold text-2xl"> نور الهدى 
         </span>
     </h1>
+      </Link>
     )
 }
 export default Logo;

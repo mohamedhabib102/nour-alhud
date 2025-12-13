@@ -1,28 +1,63 @@
 "use client"
+import { useAuth } from "@/lib/contextapi";
 import CustomContainer from "@/ui/CustomContainer"
 import DarkModeToggle from "@/ui/DarkModeToggle";
 import Logo from "@/ui/Logo";
 import OverlayHelp from "@/ui/OverlayHelp";
+import OverlayLogined from "@/ui/OverlayLogined";
 import ToggleNavbar from "@/ui/ToggleNavbar";
-import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 
 
 
 
 const Header: React.FC = () => {
     const [toggle, setToggle] = useState(false);
+    const { userData } = useAuth();
+    const [mounted, setMounted] = useState(false);
+
+     useEffect(() => {
+       setMounted(true);
+     }, []);
+
     return (
         <>
         <OverlayHelp 
         toggle={toggle} 
         setToggle={setToggle} />
-        <section className="bg-linear-to-r from-[#121212] to-[#ceaf15] py-2" dir="ltr">
+        <section className="bg-linear-to-r from-[#121212] to-[#ceaf15] py-2 relative" dir="ltr">
             <CustomContainer>
                 <nav className="flex items-center justify-between">
                     <Logo />
-                    <div className="flex items-center gap-4 flex-row-reverse">
+                    <div className="flex items-center gap-2.5 flex-row-reverse">
                     <ToggleNavbar setToggle={setToggle} toggle={toggle} />
                     <DarkModeToggle />
+                    {mounted && userData?.personID && (
+                        <Link href={`profile/`} 
+                        className="flex justify-center items-center cursor-pointer w-10 h-10 relative p-0.5 bg-(--main-color) rounded-full">
+                            {mounted && userData.gender === "M" ? (
+                            <Image
+                              src="/images/male.png"
+                              alt="user"
+                              width={40}
+                              height={40}
+                              className="rounded-full"
+                            />
+                            ) :
+                            (
+                            <Image
+                                src="/images/female.jpg"
+                                alt="user"
+                                width={40}
+                                height={40}
+                                className="rounded-full"
+                            />
+                            )
+                           }
+                        </Link>
+                    )}
                     </div>
                 </nav>
             </CustomContainer>
